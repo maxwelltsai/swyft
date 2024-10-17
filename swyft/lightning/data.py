@@ -13,7 +13,7 @@ from typing import (
 import numpy as np
 import torch
 from torch.utils.data import random_split
-import pytorch_lightning as pl
+from lightning import pytorch as pl
 import zarr
 import fasteners
 import swyft

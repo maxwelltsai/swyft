@@ -16,14 +16,14 @@ import numpy as np
 import torch
 from torch.nn import functional as F
 
-import pytorch_lightning as pl
-from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
-from pytorch_lightning.callbacks.early_stopping import EarlyStopping
+from lightning import pytorch as pl
+from lightning.pytorch.callbacks import LearningRateMonitor, ModelCheckpoint
+from lightning.pytorch.callbacks.early_stopping import EarlyStopping
 
 try:
-    from pytorch_lightning.trainer.supporters import CombinedLoader
+    from lightning.pytorch.trainer.supporters import CombinedLoader
 except ImportError:
-    from pytorch_lightning.utilities import CombinedLoader
+    from lightning.pytorch.utilities import CombinedLoader
 
 # from pytorch_lightning.cli import instantiate_class
 

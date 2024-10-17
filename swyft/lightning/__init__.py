@@ -6,6 +6,7 @@ from swyft.lightning.bounds import *
 from swyft.lightning.simulator import *
 from swyft.lightning.data import *
 from swyft.lightning.utils import *
+from swyft.lightning import xpu
 
 __all__ = [
     "LogRatioSamples",
@@ -33,3 +34,11 @@ __all__ = [
     "AdamWOneCycleLR",
     "AdamWReduceLROnPlateau",
 ]
+
+
+
+
+from lightning.pytorch.strategies import StrategyRegistry
+
+StrategyRegistry.register("xpu_single", xpu.SingleXPUStrategy)
+StrategyRegistry.register("xpu_ddp", xpu.DDPXPUStrategy)
